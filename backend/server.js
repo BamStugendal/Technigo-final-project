@@ -3,6 +3,8 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import mongoose from "mongoose";
 
+import posterData from './data/posters.json'
+
 const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/posters";
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.Promise = Promise;
@@ -10,6 +12,9 @@ mongoose.Promise = Promise;
 // Mongoose model for poster
 const Poster = mongoose.model("Poster", {
   title: {
+    type: String,
+  },
+  illustartor: {
     type: String,
   },
   description: {
@@ -21,11 +26,17 @@ const Poster = mongoose.model("Poster", {
   width: {
     type: Number,
   },
-  higth: {
+  height: {
     type: Number,
   },
   image: {
     type: String,
+  },
+  category: {
+    type: String,
+  },
+  tags: {
+    type: Array,
   },
 })
 
@@ -34,8 +45,7 @@ if (process.env.RESET_DATABASE) {
     await Poster.deleteMany()
   
     posterData.forEach(item => {
-      const newPoster = new Poster(item)
-      newPoster.save()
+      new Poster(item).save()
     })
   
   }
@@ -57,13 +67,37 @@ app.get('/', (req, res) => {
 })
 
 app.get('/posters', async (req, res) => {
-  const allPosters = await Poster.find()
-  res.json(allPosters)
+  const posters = await Poster.find(req.query)
+  const portrait = req.query.portrait
+  const landscape = req.query.square
+  const square = req.query.square
+
+  if (portrait) {
+    const posterPortait = posterData.filter(item => item.width < item.height)
+    res.status(200).res.json(posterPortait)
+  } 
+
+  if (square) {
+    const posterSquare = posterData.filter(item => item.width === item.height)
+    res.status(200).res.json(posterSquare)
+  }
+
+  if (landscape) {
+    const posterLandscape = posterData.filter(item => item.width > item.height)
+    res.status(200).res.json(posterLandscape)
+  } 
+
+  res.json(posters)
 })
 
-app.get('/posters/:poster_id', async (req, res) => {
-  const singlePoster = await Show.findOne({ poster_id: req.params.poster_id })
-  res.json(singlePoster)
+app.get('/posters/:id', async (req, res) => {
+  try {
+    console.log(req.params.id)
+    const poster = await Poster.findOne({ _id: req.params.id })
+    res.status(200).res.json(poster)
+  } catch (err) {
+    res.status(404).res.json({ error: 'Poster not found' })
+  }
 })
 
 // Start the server
