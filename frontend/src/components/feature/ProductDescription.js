@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { products } from 'reducers/products'
-import { useDispatch, useSelector } from 'react-redux'
+// import { useDispatch } from 'react-redux'
 
 export const ProductDescription = () => {
     const [poster, setPoster] = useState({tags: ['tag1', 'tag2']})
 
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
     const {id} = useParams()
 
     const POSTER_URL = `http://localhost:8080/posters/${id}`
@@ -15,7 +14,7 @@ export const ProductDescription = () => {
          fetch(POSTER_URL)
          .then((res) => {
              if (!res.ok) {
-               throw 'Network response was not ok'
+                throw new Error('Network response was not ok') 
              }
              return res.json()
            })

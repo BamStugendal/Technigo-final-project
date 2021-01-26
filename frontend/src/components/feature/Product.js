@@ -1,9 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { cart } from 'reducers/cart'
-import StorePage from './StorePage'
 import { Link } from 'react-router-dom'
-import { useParams } from 'react-router-dom'
 
 export const Product = ({ product }) => {
     const dispatch = useDispatch()

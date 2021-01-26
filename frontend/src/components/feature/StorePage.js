@@ -24,7 +24,7 @@ const StorePage = () => {
         fetch(ALL_POSTERS_URL)
         .then((res) => {
             if (!res.ok) {
-              throw 'Network response was not ok'
+                throw new Error('Network response was not ok')
             }
             return res.json()
           })
