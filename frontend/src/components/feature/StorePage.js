@@ -1,26 +1,17 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { NavLink } from "react-router-dom";
+
 import { products } from 'reducers/products'
+import 'assets/CSS/product-grid.css'
 import { Product } from './Product'
 
 const StorePage = () => {
+    const ALL_POSTERS_URL = 'http://localhost:8080/posters'
     const allPosters = useSelector(state => state.products.items)
-    console.log(allPosters)
-
     const dispatch = useDispatch()
-    const handlePosterSuccess = (res) => {
-        console.log(res)
-        dispatch(products.actions.setItem(res))
-      }
-    
-      const handlePosterFaild = (json) => {
-        dispatch(products.actions.setItem({ json }))
-      }
 
-    
-
-    const handlePoster = (event) => {
-        const ALL_POSTERS_URL = 'http://localhost:8080/posters'
+    const FetchPosters = () => {
         fetch(ALL_POSTERS_URL)
         .then((res) => {
             if (!res.ok) {
@@ -28,20 +19,26 @@ const StorePage = () => {
             }
             return res.json()
           })
-          .then((res) => handlePosterSuccess(res))
-          .catch((err) => handlePosterFaild(err))
+          .then((res) => dispatch(products.actions.setItem(res)))
+          .catch((err) => console.log(err))
     }
 
-    useEffect(handlePoster, [])
-
+    useEffect(FetchPosters, [])
+    
     return (
-        <div>
+        <>
+        
+        <section className="gallery-section">
+        
             {allPosters.map(product => (
                 <Product 
                     key={product._id} 
                     product={product} />
-            ))} 
-        </div>
+            ))}
+            
+        </section>
+        
+        </>
     )
 }
 

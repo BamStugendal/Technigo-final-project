@@ -6,20 +6,11 @@
         "price": 299,
         "width": 50,
         "height": 70,
-        "image": "https://agentpekka.com/wp-content/uploads/2019/08/AP_Sebastien_Plassard_visa-platinum_2x.jpg",
+        "image": "https://res.cloudinary.com/dg2wd4bjk/image/upload/v1611858109/portrait_y2uxgm.png",
         "category": "Illustation",
-        "tags": ["Cat", "Space"]
-    },
-    {
-        "title": "Family photo",
-        "illustartor": "Bäm Stugendal",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqu. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis auteore eu fugiat nulla pariat Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis etut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
-        "price": 399,
-        "width": 50,
-        "height": 50,
-        "image": "https://i.pinimg.com/originals/6c/12/db/6c12db7de4d4d53ea50533a8b36b16f5.jpg",
-        "category": "Illustation",
-        "tags": ["Family", "Love"]
+        "tags": ["Cat", "Space"],
+        "widthSpan": "w-1",
+        "heightSpan": "h-2"
     },
     {
         "title": "Boat in the lake Poster",
@@ -28,20 +19,24 @@
         "price": 299,
         "width": 50,
         "height": 50,
-        "image": "https://agentpekka.com/wp-content/uploads/2019/08/AP_Sebastien_Plassard_visa-platinum_2x.jpg",
+        "image": "https://res.cloudinary.com/dg2wd4bjk/image/upload/v1611858109/square_idrcwe.png",
         "category": "Illustation",
-        "tags": ["Cat", "Lake", "Boats"]
+        "tags": ["Cat", "Lake", "Boats"],
+        "widthSpan": "w-1",
+        "heightSpan": "h-1"
     },
     {
         "title": "Sri Lanka Palms",
         "illustartor": "Bäm Stugendal",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqu. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis auteore eu fugiat nulla pariat Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis etut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
         "price": 399,
-        "width": 50,
+        "width": 70,
         "height": 50,
-        "image": "https://i.pinimg.com/originals/6c/12/db/6c12db7de4d4d53ea50533a8b36b16f5.jpg",
+        "image": "https://res.cloudinary.com/dg2wd4bjk/image/upload/v1611858109/landscape_ndgrjr.png",
         "category": "Illustation",
-        "tags": ["Family", "Palms"]
+        "tags": ["Family", "Palms"],
+        "widthSpan": "w-2",
+        "heightSpan": "h-1"
     },
     {
         "title": "Over the Hill",
@@ -50,9 +45,11 @@
         "price": 499,
         "width": 70,
         "height": 100,
-        "image": "https://agentpekka.com/wp-content/uploads/2019/08/AP_Sebastien_Plassard_visa-platinum_2x.jpg",
+        "image": "https://res.cloudinary.com/dg2wd4bjk/image/upload/v1611858109/portrait_y2uxgm.png",
         "category": "Illustation",
-        "tags": ["Hill", "Space"]
+        "tags": ["Hill", "Space"],
+        "widthSpan": "w-1",
+        "heightSpan": "h-2"
     },
     {
         "title": "Almost Kiss",
@@ -61,9 +58,102 @@
         "price": 199,
         "width": 30,
         "height": 40,
-        "image": "https://i.pinimg.com/originals/6c/12/db/6c12db7de4d4d53ea50533a8b36b16f5.jpg",
+        "image": "https://res.cloudinary.com/dg2wd4bjk/image/upload/v1611858109/portrait_y2uxgm.png",
         "category": "Illustation",
-        "tags": ["Relationship", "Love"]
+        "tags": ["Relationship", "Love"],
+        "widthSpan": "w-1",
+        "heightSpan": "h-2"
+    },
+    {
+        "title": "Sri Lanka Palms",
+        "illustartor": "Bäm Stugendal",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqu. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis auteore eu fugiat nulla pariat Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis etut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
+        "price": 399,
+        "width": 70,
+        "height": 50,
+        "image": "https://res.cloudinary.com/dg2wd4bjk/image/upload/v1611858109/landscape_ndgrjr.png",
+        "category": "Illustation",
+        "tags": ["Family", "Palms"],
+        "widthSpan": "w-2",
+        "heightSpan": "h-1"
+    },
+    {
+        "title": "Family photo",
+        "illustartor": "Bäm Stugendal",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqu. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis auteore eu fugiat nulla pariat Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis etut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
+        "price": 399,
+        "width": 50,
+        "height": 50,
+        "image": "https://res.cloudinary.com/dg2wd4bjk/image/upload/v1611858109/square_idrcwe.png",
+        "category": "Illustation",
+        "tags": ["Family", "Love"],
+        "widthSpan": "w-1",
+        "heightSpan": "h-1"
+    },
+    {
+        "title": "Family photo",
+        "illustartor": "Bäm Stugendal",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqu. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis auteore eu fugiat nulla pariat Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis etut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
+        "price": 399,
+        "width": 50,
+        "height": 50,
+        "image": "https://res.cloudinary.com/dg2wd4bjk/image/upload/v1611858109/square_idrcwe.png",
+        "category": "Illustation",
+        "tags": ["Family", "Love"],
+        "widthSpan": "w-1",
+        "heightSpan": "h-1"
+    },
+    {
+        "title": "Family photo",
+        "illustartor": "Bäm Stugendal",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqu. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis auteore eu fugiat nulla pariat Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis etut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
+        "price": 399,
+        "width": 50,
+        "height": 50,
+        "image": "https://res.cloudinary.com/dg2wd4bjk/image/upload/v1611858109/square_idrcwe.png",
+        "category": "Illustation",
+        "tags": ["Family", "Love"],
+        "widthSpan": "w-1",
+        "heightSpan": "h-1"
+    },
+    {
+        "title": "Space cat",
+        "illustartor": "Bäm Stugendal",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqu. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis auteore eu fugiat nulla pariat Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis etut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
+        "price": 299,
+        "width": 50,
+        "height": 70,
+        "image": "https://res.cloudinary.com/dg2wd4bjk/image/upload/v1611858109/portrait_y2uxgm.png",
+        "category": "Illustation",
+        "tags": ["Cat", "Space"],
+        "widthSpan": "w-1",
+        "heightSpan": "h-2"
+    },
+    {
+        "title": "Sri Lanka Palms",
+        "illustartor": "Bäm Stugendal",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqu. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis auteore eu fugiat nulla pariat Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis etut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
+        "price": 399,
+        "width": 70,
+        "height": 50,
+        "image": "https://res.cloudinary.com/dg2wd4bjk/image/upload/v1611858109/landscape_ndgrjr.png",
+        "category": "Illustation",
+        "tags": ["Family", "Palms"],
+        "widthSpan": "w-2",
+        "heightSpan": "h-1"
+    },
+    {
+        "title": "Family photo",
+        "illustartor": "Bäm Stugendal",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqu. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis auteore eu fugiat nulla pariat Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis etut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
+        "price": 399,
+        "width": 50,
+        "height": 50,
+        "image": "https://res.cloudinary.com/dg2wd4bjk/image/upload/v1611858109/square_idrcwe.png",
+        "category": "Illustation",
+        "tags": ["Family", "Love"],
+        "widthSpan": "w-1",
+        "heightSpan": "h-1"
     }
 ]
 

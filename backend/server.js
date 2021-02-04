@@ -38,6 +38,12 @@ const Poster = mongoose.model("Poster", {
   tags: {
     type: Array,
   },
+  widthSpan: {
+    type: String,
+  },
+  heightSpan: {
+    type: String,
+  },
 })
 
 if (process.env.RESET_DATABASE) {
@@ -62,7 +68,6 @@ app.use(bodyParser.json());
 
 // ROUTES
 app.get('/', (req, res) => {
-  console.log('test')
   res.send('Hello world')
 })
 
