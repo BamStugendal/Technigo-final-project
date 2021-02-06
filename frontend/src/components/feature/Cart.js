@@ -11,12 +11,10 @@ export const Cart = () => {
 
     return (
         <div className="cart-section">
-            
-            <ul>
                 {products.map(product => (
                     <CartItem key={product._id} product={product} />
                 ))}
-            </ul>
+
             Total: {totalPrice}
         </div>
     )

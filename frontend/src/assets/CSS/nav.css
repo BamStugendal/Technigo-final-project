@@ -17,6 +17,8 @@ nav {
     list-style-type: none;
     padding: 25px 40px;
     font-size: 16px;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -28,5 +30,140 @@ nav a {
     color: #000;
 }
 
+.cart-container {
+    width: 100%;
+    position: relative;
+}
 
+.cart-icon {
+    width: 35px;
+}
+
+.cart-container div {
+    position: absolute;
+    background-color: #000;
+    width: 23px;
+    height: 23px;
+    border-radius: 12px;
+    color: #fff;
+    right: -5px;
+    bottom: 0px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.cart-bar {
+    background-color: none;
+    font-size: 35px;
+}
+
+.cart {
+    background-color: #fff;
+    min-width: 300px;
+    max-width: 500px;
+    width: 30%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+    position: fixed;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    top: 0;
+    right: -100%;
+    transition: 850ms;
+}
+
+.cart.active {
+    right: 0;
+    transition: 350ms;
+}
+
+
+.divider {
+    width: 60px;
+    height: 3px;
+    background-color: black;
+    transform: rotate(-60deg);
+}
+
+.menu-icon {
+    z-index: 10;
+    width: 25px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.line {
+    width: 100%;
+    height: 3px;
+    background-color: #000;
+    border-radius: 10px;
+    transition: 350ms;
+}
+
+.middle {
+    width: 50%;
+    align-self: flex-end;
+}
+
+.middle.active {
+    width: 0;
+}
+
+.top.active {
+    transform: rotate(45deg);
+    justify-self: center;
+}
+
+.bottom.active {
+    transform: rotate(-45deg);
+    justify-self: center;
+    z-index: -1;
+    position: absolute;
+}
+
+
+.sidebar {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    max-width: 500px;
+    width: 30%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+    height: 100vh; 
+    right: -100%;
+    overflow-y: hidden;
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+.overlay {
+
+    opacity: 0;
+    transition: 300ms ease-in-out;
+}
+
+.overlay.active {
+    width: 100%;
+    min-height: 100%;
+    background-color: black;
+    z-index: 1;
+    position: fixed;
+    opacity: 0.5;
+    overflow: hidden;
+}
 

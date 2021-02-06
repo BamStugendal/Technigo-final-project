@@ -30,7 +30,7 @@ export const ProductDescription = () => {
     useEffect(fetchPosterInfo, [id])
 
     return (
-        <>
+        <section className="d-ctn">
             <section className="details-section">
                 <button
                     className="back-link"
@@ -64,7 +64,7 @@ export const ProductDescription = () => {
                 <img src={product.image} alt="product.title" />
             </section>
             <section id="test">helllo testing testing</section>
-        </>
+        </section>
     )
 }
 export default ProductDescription

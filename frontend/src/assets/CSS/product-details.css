@@ -1,8 +1,14 @@
+.d-ctn {
+    overflow:auto;
+    height: 100vh;
+}
+
 .details-section {
     display:flex;
     width: 100%;
     position: relative;
 }
+
 .details-section img {
     display:flex;
     width: 50%;

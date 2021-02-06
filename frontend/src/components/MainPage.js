@@ -7,6 +7,7 @@ import {
   
 import ProductDetails from './feature/ProductDetails'
 import Nav from './feature/Nav'
+import Cart from './feature/Cart'
 import StorePage from './feature/StorePage'
 
 const MainPage = () => {
@@ -14,21 +15,13 @@ const MainPage = () => {
         <Router>
           <Nav />
           <Switch>
-            {/* <Route path="/about" exact>
-                about
-            </Route> */}
-            <Route path="/store" exact>
-                <StorePage />
-            </Route>
+            <Route path="/store" exact component={StorePage}></Route>
 
             {/* // Path to product details page */}
-            <Route path="/posters/:id" exact>
-              <ProductDetails />
-            </Route>
+            <Route path="/posters/:id" exact component={ProductDetails}></Route>
+            <Route path="/cart" exact component={Cart}></Route>
           
-            <Route path="/" exact>
-              welcome home
-            </Route>
+            <Route path="/" exact>Welcome home</Route>
           </Switch>
       </Router>
     )

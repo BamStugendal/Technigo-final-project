@@ -4,7 +4,8 @@
     grid-auto-rows: 550px;
     grid-gap: 0px;
     grid-auto-flow: dense;
-    
+    overflow:auto;
+    height: 100vh;
 }
 
 .gallery-item {
