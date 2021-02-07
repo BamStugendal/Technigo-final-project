@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { cart } from 'reducers/cart'
 
-import { ProductImage, Item } from 'assets/CSS/cartCSS'
+import { ProductImage } from 'assets/CSS/cartCSS'
 
 export const CartItem = ({ product }) => {
     const dispatch = useDispatch()

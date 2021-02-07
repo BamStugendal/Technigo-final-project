@@ -1,10 +1,8 @@
-import React, { useRef, useEffect } from 'react'
+import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { cart } from 'reducers/cart'
-import { NavLink, Link } from "react-router-dom";
-import { CartItem } from './CartItem'
+import { Link } from "react-router-dom";
 import 'assets/CSS/popcart.css'
-import PropTypes from "prop-types";
 
 export const CartPreview = () => {
     const dispatch = useDispatch()
@@ -12,9 +10,6 @@ export const CartPreview = () => {
     const totalPrice = useSelector(
         state => state.cart.items.reduce((total, item) => total + (item.price * item.quantity), 0)
     )
-
-
-
 
     return (
         <div className="popcart-section">

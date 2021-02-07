@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 import 'assets/CSS/product-grid.css'
 
-
 export const Product = ({ product }) => {
-    const [isShown, setIsShown] = useState(false)
 
     return (
         <article className={`gallery-container ${product.widthSpan} ${product.heightSpan}`}>
@@ -14,9 +12,7 @@ export const Product = ({ product }) => {
                 <div className="gallery-image">
                     <img 
                         src={product.image} 
-                        alt={product.title} 
-                        onMouseEnter={() => setIsShown(true)}
-                        onMouseLeave={() => setIsShown(false)}                
+                        alt={product.title}            
                     />
                 </div>
                 <div className="gallery-text">

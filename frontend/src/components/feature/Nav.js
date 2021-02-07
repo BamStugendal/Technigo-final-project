@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { useSelector, useStore } from 'react-redux'
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import { NavLink, Link } from "react-router-dom";
-import cartIcon from 'assets/images/cart.svg'
 import 'assets/CSS/nav.css'
 
 import { HiOutlineShoppingBag } from "react-icons/hi";
@@ -46,15 +45,6 @@ const Nav = () => {
         alt='Letter b' />
       <nav>
 
-
-
-      
-
-
-        {/* <NavLink to="/">Portfolio</NavLink>
-        <NavLink to="/contact">Contact</NavLink>
-        <NavLink to="/store">Store</NavLink>
-         */}
         <div className="cart-bar">
           <Link to="#" className="cart-icon" onClick={showCart}>
             <HiOutlineShoppingBag />
@@ -84,16 +74,6 @@ const Nav = () => {
               <NavLink to="/store">Store</NavLink>
             </div>  
         </div>
-
-        {/* <div className="menu">
-          <div className="top line"></div>
-          <div className="middle line"></div>
-          <div className="bottom line"></div>
-        </div> */}
-
-
-
-      
       </nav>
       
     </header>
@@ -103,26 +83,3 @@ const Nav = () => {
 }
 
 export default Nav
-
-      {/* {isShown && <CartPreview  />}
-      <Link to="/cart">
-        <div
-          className={'cart-container'}
-          onMouseEnter={e => {
-            setStyle({display: 'flex'})}}
-          onMouseLeave={e => {
-            setStyle({display: 'none'})
-        }}
-        >
-          <div>
-            {cartQuantity}
-          </div>
-          <img 
-            src={cartIcon}
-            className="cart-icon" />
-        </div>
-      </Link> 
-
-    
-    
-    */}

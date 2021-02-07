@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { NavLink } from "react-router-dom";
 
 import { products } from 'reducers/products'
 import 'assets/CSS/product-grid.css'
