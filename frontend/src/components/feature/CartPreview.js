@@ -13,24 +13,25 @@ export const CartPreview = () => {
 
     return (
         <div className="popcart-section">
+            <div className="cart-item-ctn">
                 {products.map(product => (
                     <div className="popcart-item-container">
                         <div className="item-info">
-                            <p>{product.title}</p>
-                            <p>Size: {`${product.width}x${product.height}`}</p>
+                            <p className="item-title">{product.title}</p>
+                            <p>Size: {`${product.width}x${product.height}`} cm</p>
                         </div>
                         <div className="buttons-container">
                             <button type="button" onClick={() => dispatch(cart.actions.removeItem(product))}>-</button>
                             <p>{product.quantity}</p>
                             <button type="button" onClick={() => dispatch(cart.actions.addItem(product))}>+</button>
                         </div>
-                        <div>
+                        <div className="tmp">
                             <p>{product.price * product.quantity} kr</p>
                         </div>
                    </div>
                 ))}
-
-            <div className="total">Total: {totalPrice} kr</div>
+            </div>
+            <p className="total">Total: {totalPrice} kr</p>
             <Link to="/cart" className="checkout-btn">
                 <button>
                     Go to checkout

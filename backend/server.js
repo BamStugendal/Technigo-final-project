@@ -97,11 +97,11 @@ app.get('/posters', async (req, res) => {
 
 app.get('/posters/:id', async (req, res) => {
   try {
-    console.log(req.params.id)
     const poster = await Poster.findOne({ _id: req.params.id })
-    res.json(poster)
+    res.status(200).json(poster)
   } catch (err) {
-    res.status(404).res.json({ error: 'Poster not found' })
+    console.log('error')
+    res.status(404).json({ error: 'Poster not found' })
   }
 })
 

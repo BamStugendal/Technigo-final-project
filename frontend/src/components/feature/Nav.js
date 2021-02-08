@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { NavLink, Link } from "react-router-dom";
 import 'assets/CSS/nav.css'
 
-import { HiOutlineShoppingBag } from "react-icons/hi";
+import { HiOutlineShoppingBag, HiX, HiMenuAlt3 } from "react-icons/hi";
 import { GrClose } from "react-icons/gr";
 import CartPreview from './CartPreview';
 
@@ -30,6 +30,8 @@ const Nav = () => {
     setCart(false)
   }
 
+
+
   const exitOverlay = () => {
     setCart(false)
     setSidebar(false)
@@ -39,41 +41,37 @@ const Nav = () => {
   return (
     <>
     <header>
-      <img 
-        className="logo"
-        src='https://res.cloudinary.com/dg2wd4bjk/image/upload/v1611868334/b-logo_tjdz9l.png' 
-        alt='Letter b' />
+      <Link to="/store" >
+        <img 
+          className="logo"
+          src='https://res.cloudinary.com/dg2wd4bjk/image/upload/v1611868334/b-logo_tjdz9l.png' 
+          alt='Letter b' />
+      </Link>
       <nav>
 
         <div className="cart-bar">
           <Link to="#" className="cart-icon" onClick={showCart}>
-            <HiOutlineShoppingBag />
-            <div className="quantity">{cartQuantity}</div>
+            <HiX className={cart ? 'exit active' : 'exit' }/>
+            <HiOutlineShoppingBag className={cart ? 'shopping-bag active' : 'shopping-bag' } />
+            <div className={cart ? 'quantity' : 'quantity active' }>{cartQuantity}</div>
           </Link>
         </div>
         <div className={cart ? 'cart active' : 'cart' }>
-              <Link to="#" className="cart-bar">
-                <GrClose onClick={showCart}/>
-              </Link>
             <CartPreview />
         </div>
 
         <div className="divider"></div>
 
-        <div className="menu-bar">
           <Link to="#" className="menu-link" onClick={showSidebar}>
-            <div className="menu-icon">
-              <div className={sidebar ? 'top line active' : 'top line' }></div>
-              <div className={sidebar ? 'middle line active' : 'middle line' }></div>
-              <div className={sidebar ? 'bottom line active' : 'bottom line' }></div>
-            </div>
+            <HiX className={sidebar ? 'exit active' : 'exit'}/>
+            <HiMenuAlt3 className={sidebar ? 'menu-icon' : 'menu-icon active'} />
           </Link>
-            <div className={sidebar ? 'sidebar active' : 'sidebar' }>
-              <NavLink to="/">Portfolio</NavLink>
+            <div className={sidebar ? 'sidebar active' : 'sidebar'}>
+              <NavLink to="/home">Portfolio</NavLink>
               <NavLink to="/contact">Contact</NavLink>
               <NavLink to="/store">Store</NavLink>
             </div>  
-        </div>
+ 
       </nav>
       
     </header>
@@ -83,3 +81,10 @@ const Nav = () => {
 }
 
 export default Nav
+
+
+{/* <div className="menu-icon">
+<div className={sidebar ? 'top line active' : 'top line' }></div>
+<div className={sidebar ? 'middle line active' : 'middle line' }></div>
+<div className={sidebar ? 'bottom line active' : 'bottom line' }></div>
+</div> */}

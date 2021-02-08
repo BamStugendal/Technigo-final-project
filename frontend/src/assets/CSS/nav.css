@@ -9,7 +9,7 @@ header {
 .logo {
     width: 50px;
     height: 50px;
-    padding: 20px;
+    margin: 20px;
 }
 
 nav {
@@ -26,8 +26,13 @@ nav a {
     margin: 15px;
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
     color: #000;
+    
+}
+
+nav a.active {
+    color: #7B9F9D;
 }
 
 .cart-container {
@@ -37,6 +42,30 @@ nav a {
 
 .cart-icon {
     width: 35px;
+    z-index: 10;
+}
+
+.shopping-bag {
+    opacity: 1;
+    transition: 300ms ease-in-out;
+}
+
+.shopping-bag.active {
+    opacity: 0;
+    transform: rotate(-180deg) scale(.5);
+    transition: 300ms ease-in-out;
+}
+
+.exit {
+    position: absolute;
+    opacity: 0;
+    transition: 300ms ease-in-out;
+}
+
+.exit.active {
+    z-index: 15;
+    opacity: 1;
+    transform: rotate(180deg) scale(1);
 }
 
 .cart-container div {
@@ -75,7 +104,7 @@ nav a {
     box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
     top: 0;
     right: -100%;
-    transition: 850ms;
+    transition: 850ms ease-in-out;
 }
 
 .cart.active {
@@ -87,29 +116,33 @@ nav a {
 .divider {
     width: 60px;
     height: 3px;
+    z-index: 10;
     background-color: black;
     transform: rotate(-60deg);
 }
 
 .menu-icon {
-    z-index: 10;
-    width: 25px;
-    height: 20px;
+    opacity: 0;
+    transform: rotate(180deg) scale(1);
+    transition: 300ms ease-in-out;
+}
+
+.menu-icon.active {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+    
+}
+
+.menu-link {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
+    font-size: 35px;
+    z-index: 10;
+    align-items: center;
+    margin: 5px;
 }
 
-.line {
-    width: 100%;
-    height: 3px;
-    background-color: #000;
-    border-radius: 10px;
-    transition: 350ms;
-}
 
-.middle {
+/* .middle {
     width: 50%;
     align-self: flex-end;
 }
@@ -128,7 +161,7 @@ nav a {
     justify-self: center;
     z-index: -1;
     position: absolute;
-}
+} */
 
 
 .sidebar {
@@ -138,13 +171,20 @@ nav a {
     min-width: 300px;
     max-width: 500px;
     width: 30%;
+    height: 100vh;
     position: fixed;
-    right: 0;
     top: 0;
     background-color: #fff;
-    height: 100vh; 
     right: -100%;
-    overflow-y: hidden;
+    transition: 500ms ease-in-out;
+    padding-top:120px;
+    padding-left: 40px;
+    font-size: 32px;
+    box-sizing: border-box;    
+}
+
+.sidebar a:hover {
+    transform: skew(-20deg);
 }
 
 .sidebar.active {
@@ -152,9 +192,8 @@ nav a {
 }
 
 .overlay {
-
     opacity: 0;
-    transition: 300ms ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
 .overlay.active {
@@ -163,7 +202,13 @@ nav a {
     background-color: black;
     z-index: 1;
     position: fixed;
-    opacity: 0.5;
+    opacity: 0.7;
     overflow: hidden;
+    cursor: pointer;
 }
 
+@media screen and (max-width:500px){
+    nav {
+        padding: 20px 20px;
+    }
+}
