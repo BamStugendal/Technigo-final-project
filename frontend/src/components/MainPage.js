@@ -3,7 +3,7 @@ import {
     BrowserRouter as Router,
     Switch,
     Route
-  } from "react-router-dom"
+  } from 'react-router-dom'
   
 import ProductDetails from './feature/ProductDetails'
 import Nav from './feature/Nav'
@@ -14,19 +14,14 @@ import HomePage from './feature/Portfolio/HomePage'
 const MainPage = () => {
     return (
         <Router>
-          <Nav key="nav"/>
+          <Nav key='nav'/>
           <Switch>
-            
-            <Route path="/store" exact component={StorePage}></Route>
-
-            {/* // Path to product details page */}
-            <Route path="/posters/:id" exact component={ProductDetails}></Route>
-            <Route path="/cart" exact component={Cart}></Route>
-          
-            <Route path="/home" component={HomePage}></Route>
+            <Route path='/store' exact component={StorePage}></Route>
+            <Route path='/posters/:id' exact component={ProductDetails}></Route>
+            <Route path='/cart' exact component={Cart}></Route>
+            <Route path='/home' component={HomePage}></Route>
           </Switch>
       </Router>
     )
 }
-
 export default MainPage

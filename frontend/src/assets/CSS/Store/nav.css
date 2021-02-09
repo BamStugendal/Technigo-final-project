@@ -130,7 +130,6 @@ nav a.active {
 .menu-icon.active {
     opacity: 1;
     transform: rotate(0deg) scale(1);
-    
 }
 
 .menu-link {
@@ -141,33 +140,11 @@ nav a.active {
     margin: 5px;
 }
 
-
-/* .middle {
-    width: 50%;
-    align-self: flex-end;
-}
-
-.middle.active {
-    width: 0;
-}
-
-.top.active {
-    transform: rotate(45deg);
-    justify-self: center;
-}
-
-.bottom.active {
-    transform: rotate(-45deg);
-    justify-self: center;
-    z-index: -1;
-    position: absolute;
-} */
-
-
 .sidebar {
     position: absolute;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     min-width: 300px;
     max-width: 500px;
     width: 30%;
@@ -189,6 +166,28 @@ nav a.active {
 
 .sidebar.active {
     right: 0;
+}
+
+.sidebar-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.social-links h4 {
+    margin: 0;
+}
+
+.links {
+    display: flex;
+    align-items: flex-end;
+    font-size: 40px;
+    left: 0;
 }
 
 .overlay {

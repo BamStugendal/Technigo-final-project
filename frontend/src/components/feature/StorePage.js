@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-
 import { products } from 'reducers/products'
-import 'assets/CSS/product-grid.css'
 import { Product } from './Product'
+import 'assets/CSS/Store/product-grid.css'
 
 const StorePage = () => {
-    const ALL_POSTERS_URL = 'http://localhost:8080/posters'
-    const allPosters = useSelector(state => state.products.items)
     const dispatch = useDispatch()
+    const allPosters = useSelector(state => state.products.items)
+    
+    const ALL_POSTERS_URL = 'http://localhost:8080/posters'
 
     const FetchPosters = () => {
         fetch(ALL_POSTERS_URL)
@@ -25,20 +25,13 @@ const StorePage = () => {
     useEffect(FetchPosters, [])
     
     return (
-        <>
-        
-        <section className="gallery-section">
-        
+        <section className='gallery-section'>
             {allPosters.map(product => (
                 <Product 
                     key={product._id} 
                     product={product} />
             ))}
-            
         </section>
-        
-        </>
     )
 }
-
 export default StorePage
