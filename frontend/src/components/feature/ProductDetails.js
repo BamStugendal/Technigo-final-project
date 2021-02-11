@@ -10,7 +10,7 @@ export const ProductDescription = () => {
     const { id } = useParams()
     const tags = product.tags ? product.tags : []
 
-    const POSTER_URL = `http://localhost:8080/posters/${id}`
+    const POSTER_URL = `https://b-studio.herokuapp.com//posters/${id}`
 
     const fetchPosterInfo = () => {
         fetch(POSTER_URL)
