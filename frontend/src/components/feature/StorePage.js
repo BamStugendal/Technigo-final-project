@@ -8,7 +8,7 @@ const StorePage = () => {
     const dispatch = useDispatch()
     const allPosters = useSelector(state => state.products.items)
     
-    const ALL_POSTERS_URL = 'https://b-studio.herokuapp.com//posters'
+    const ALL_POSTERS_URL = 'https://b-studio.herokuapp.com/posters'
 
     const FetchPosters = () => {
         fetch(ALL_POSTERS_URL)
