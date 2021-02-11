@@ -32,7 +32,10 @@ export const ProductDescription = () => {
                 <div className='details-container'>
                     <div className='container'>
                         <div className='vertical'>
-                            <h4 className='product-title'>{product.title} <p className='product-category'>{product.category}</p></h4>
+                            <h4 className='product-title'>
+                                {product.title} 
+                                <p className='product-category'>{product.category}</p>
+                            </h4>
                         </div>
                         <div className='details'>
                             <p>{`${product.width} x ${product.height} cm`}</p>
