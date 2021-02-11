@@ -1,15 +1,14 @@
-import express from "express";
-import bodyParser from "body-parser";
-import cors from "cors";
-import mongoose from "mongoose";
+import express from "express"
+import bodyParser from "body-parser"
+import cors from "cors"
+import mongoose from "mongoose"
 
 import posterData from './data/posters.json'
 
-const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/posters";
-mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
-mongoose.Promise = Promise;
+const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/posters"
+mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.Promise = Promise
 
-// Mongoose model for poster
 const Poster = mongoose.model("Poster", {
   title: {
     type: String,
@@ -58,15 +57,12 @@ if (process.env.RESET_DATABASE) {
   seedDatabase()
 } 
 
-//   PORT=9000 npm start
 const port = process.env.PORT || 8080;
 const app = express();
 
-// Add middlewares to enable cors and json body parsing
 app.use(cors());
 app.use(bodyParser.json());
 
-// ROUTES
 app.get('/', (req, res) => {
   res.send('Hello world')
 })
@@ -105,7 +101,6 @@ app.get('/posters/:id', async (req, res) => {
   }
 })
 
-// Start the server
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
