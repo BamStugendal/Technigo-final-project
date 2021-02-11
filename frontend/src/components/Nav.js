@@ -1,11 +1,19 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { NavLink, Link } from 'react-router-dom'
-
-import { HiOutlineShoppingBag, HiX, HiMenuAlt3 } from 'react-icons/hi'
-import { TiSocialGithub, TiSocialInstagram, TiSocialLinkedin } from 'react-icons/ti'
-import CartPreview from './CartPreview'
+import CartPreview from './feature/Store/Cart'
 import 'assets/CSS/Store/nav.css'
+import { 
+    HiOutlineShoppingBag as BagIcon, 
+    HiX as ExitIcon, 
+    HiMenuAlt3 as MenuIcon
+  } from 'react-icons/hi'
+import { 
+    TiSocialGithub as GitHubIcon, 
+    TiSocialInstagram as InstagranIcon, 
+    TiSocialLinkedin as LinkedinIcon 
+  } from 'react-icons/ti'
+
 
 const Nav = () => {
   const [cart, setCart] = useState(false)
@@ -44,20 +52,19 @@ const Nav = () => {
         <nav>
           <div className='cart-bar'>
             <Link to='#' className='cart-icon' onClick={toggleCart}>
-              <HiX className={cart ? 'exit active' : 'exit' }/>
-              <HiOutlineShoppingBag className={cart ? 'shopping-bag active' : 'shopping-bag' } />
+              <ExitIcon className={cart ? 'exit active' : 'exit' }/>
+              <BagIcon className={cart ? 'shopping-bag active' : 'shopping-bag' } />
               <div className={cart ? 'quantity' : 'quantity active' }>{cartQuantity}</div>
             </Link>
           </div>
           <div className={cart ? 'cart active' : 'cart' }>
               <CartPreview />
           </div>
-
           <div className='divider'></div>
 
           <Link to='#' className='menu-link' onClick={toggleSidebar}>
-            <HiX className={sidebar ? 'exit active' : 'exit'}/>
-            <HiMenuAlt3 className={sidebar ? 'menu-icon' : 'menu-icon active'} />
+            <ExitIcon className={sidebar ? 'exit active' : 'exit'}/>
+            <MenuIcon className={sidebar ? 'menu-icon' : 'menu-icon active'} />
           </Link>
           <div className={sidebar ? 'sidebar active' : 'sidebar'}>
             <div className='sidebar-links'>
@@ -66,12 +73,9 @@ const Nav = () => {
               <NavLink to='/store'>Store</NavLink>
             </div>
             <div className='social-links'>
-              <h4>Check me out</h4>
-              <div className='links'>
-                <a href='https://www.instagram.com/illustration.bam/'><TiSocialInstagram /></a>
-                <a href='https://github.com/BamStugendal'><TiSocialGithub /></a>
-                <a href='https://www.linkedin.com/in/b%C3%A4m-stugendal-7401a3172/'><TiSocialLinkedin /></a>
-              </div>
+                <a href='https://www.instagram.com/illustration.bam/'><InstagranIcon /></a>
+                <a href='https://github.com/BamStugendal'><GitHubIcon /></a>
+                <a href='https://www.linkedin.com/in/b%C3%A4m-stugendal-7401a3172/'><LinkedinIcon /></a>
             </div>
           </div>  
         </nav>

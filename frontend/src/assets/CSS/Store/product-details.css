@@ -1,36 +1,96 @@
-.d-ctn {
-    overflow:auto;
+.wrapper {
+    overflow: auto;
     height: 100vh;
 }
 
 .details-section {
-    display:flex;
     width: 100%;
+    display: flex;
     position: relative;
 }
 
+.details-section a {
+    z-index: 10;
+}
+
 .details-section img {
-    display:flex;
     width: 50%;
     height: 100vh;
+    display: flex;
     object-fit: cover;
+}
+
+.details-wrapper {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.details-wrapper img {
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    object-fit: cover;
+    transform: translate(-50% -50%);
 }
 
 .details-container {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
 }
 
+.vertical {
+    top: -100px;
+    font-family: ambroise-std, serif;
+    font-size: 56px;
+    letter-spacing: 3px;
+    writing-mode: vertical-rl;
+}
 
-.details-container img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50% -50%);
+.vertical h4 {
+    margin: 0;
+}
+
+.details {
+    padding: 10%;
+}
+
+.product-category {
+    font-size: 16px;
+    font-family: montserrat, sans-serif;
+    font-weight: 400;
+    margin-left: 0;
+}
+
+button {
+    width: 150px;
+    border: none;
+    background-color: #000;
+    border-radius: 40px;
+    padding: 10px;
+    color: #fff;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+.description {
+    font-size: 14px;
+    font-family: montserrat, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
 }
 
 .tag-container {
@@ -45,81 +105,7 @@
     border-radius: 20px;
     border: 2px solid #7B9F9D;
     color: #7B9F9D;
-}
-
-.vertical {
-    font-family: ambroise-std, serif;
-    font-weight: 300;
-    font-style: normal;
-    font-size: 56px;
-    letter-spacing: 3px;
-    writing-mode: vertical-rl;
-    /* margin-top: 50px; */
-}
-
-.vertical h4 {
-    margin: 0;
-}
-
-.container {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    width: 90%;
-}
-
-.details {
-    padding: 10%;
-}
-
- .product-category {
-    font-size: 16px;
-    font-family: montserrat, sans-serif;
-    font-weight: 400;
-    margin-left: 0;
-}
-
-button {
-    border: none;
-    background-color: #000;
-    border-radius: 40px;
-    width: 150px;
-    padding: 10px;
-    color: #fff;
-    margin: 10px 0;
     cursor: pointer;
-    transition: 0.1s ease-in-out;
-}
-
-button:hover {
-    opacity: 0.8;
-}
-
-button:active {
-    transform: translateY(1px);
-    filter: saturate(150%);
-}
-
-.description {
-    font-family: montserrat, sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-.back-link {
-    border: 2px solid #000;
-    background-color: transparent;
-    border-radius: 40px;
-    padding: 10px;
-    color: #000;
-    top: 10%;
-    left: 5%;
-    position: absolute;
-}
-
-.details-section a {
-    z-index: 10;
 }
 
 .scroll-down {
@@ -136,15 +122,15 @@ button:active {
 
 .scroll-down::before, 
 .scroll-down::after {
-    content: '';
+    height: 10px;
+    width: 10px;
     position: absolute;
     top: 20%;
     left: 50%;
+    content: '';
     border: 2px solid #000;
     border-top: transparent;
     border-left: transparent;
-    height: 10px;
-    width: 10px;
     transform: translate(-50%, -100%) rotate(45deg);
     animation: scroll-down 1.5s ease-in-out infinite;
 }
@@ -176,13 +162,14 @@ button:active {
 @media screen and (max-width:768px){
     .details-section {
         flex-direction: column-reverse;
+        padding-bottom: 100px;
     }
 
-    .details-container {
+    .details-wrapper {
         width: 100%;
     }
 
-    .container {
+    .details-container {
         flex-direction: column;
     }
 
@@ -192,15 +179,10 @@ button:active {
 
     .vertical {
         writing-mode: horizontal-tb;
-        margin: 10% 10% 0 10%;
-        padding-left: 0;
-    }
-
-    .details {
-        padding-top: 0;
     }
 
     .product-title {
+        font-size: 38px;
         display: flex;
         flex-direction: row;
         align-items: flex-end;
@@ -210,23 +192,20 @@ button:active {
         margin-left: 20px;
     }
 
-    .scroll-down {
-        margin-top: 100px;
-    }
 }
 
-@media screen and (max-width:950px){
-    .container {
+@media screen and (max-width: 950px){
+    .details-container {
         flex-direction: column;
+        padding: 10%;
     }
 
     .vertical {
         writing-mode: horizontal-tb;
-        padding-left: 10%;
     }
 
     .details {
-        padding-top: 0;
+        padding: 0;
     }
 
     .product-category {

@@ -1,13 +1,13 @@
 .gallery-section {
+    width: 100%;
+    height: 100vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 50vh;
     grid-gap: 0px;
     grid-auto-flow: dense;
-    overflow:auto;
-    height: 100vh;
+    overflow: auto;
     transition: 0.3s ease-in-out;
-    width: 100%;
 }
 
 .gallery-item {
@@ -37,14 +37,14 @@
 
 .gallery-item .gallery-text {
     opacity: 0;
-    position: absolute;
     bottom: 0;
     left: 0;
+    position: absolute;
+    z-index: 4;
     color: #000;
     background-color: #fff;
     font-size: 20px;
     pointer-events: none;
-    z-index: 4;
     transition: .3s ease-out;
     padding: 30px;
 }
@@ -56,9 +56,8 @@
 
 .gallery-item:hover .gallery-text {
     opacity: 1;
-    animation: move-down .3 linear;
-    padding: 10px;
     bottom: 0;
+    padding: 10px;
 }
 
 .w-1{
@@ -75,13 +74,13 @@
     grid-row: span 2;
 }
 
-@media screen and (max-width:768px){
+@media screen and (max-width: 768px){
     .gallery-section {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media screen and (max-width:500px){
+@media screen and (max-width: 500px){
     .gallery-section {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -89,17 +88,3 @@
         grid-column:span 1;
     }
 }
-
-@keyframes move-down{
-
-    0%{
-        top:10%;
-    }
-    50%{
-        top:35%;
-    }
-    100%{
-        top:50%;
-    }
-}
-

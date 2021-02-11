@@ -1,9 +1,9 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { CartItem } from './CartItem'
-import 'assets/CSS/Store/cart.css'
+import 'assets/CSS/Store/checkout.css'
 
-export const Cart = () => {
+export const Checkout = () => {
     const products = useSelector(state => state.cart.items)
     const totalPrice = useSelector(
         state => state.cart.items.reduce((total, item) => total + (item.price * item.quantity), 0)
@@ -19,4 +19,4 @@ export const Cart = () => {
         </div>
     )
 }
-export default Cart
+export default Checkout

@@ -1,10 +1,10 @@
 import React from 'react'
-import { Header } from './Header'
+import 'assets/CSS/Portfolio/home-page.css'
 
 const HomePage = () => {
     return (
-        <div>
-            <Header />
+        <div className='portfolio-section'>
+            <h2>Portfolio</h2>
         </div>
     )
 }

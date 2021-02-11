@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import { cart } from 'reducers/cart'
 import 'assets/CSS/Store/product-details.css'
 
-export const ProductDescription = () => {
+export const ProductDetails = () => {
     const dispatch = useDispatch()
     const [product, setProduct] = useState([])
     const { id } = useParams()
@@ -16,7 +16,7 @@ export const ProductDescription = () => {
         fetch(POSTER_URL)
         .then((res) => {
             if (!res.ok) {
-            throw new Error('Network response was not ok')
+            throw new Error('Could not fetch poster details')
             }
             return res.json()
             })
@@ -27,10 +27,10 @@ export const ProductDescription = () => {
     useEffect(fetchPosterInfo, [id])
 
     return (
-        <section className='d-ctn'>
+        <section className='wrapper'>
             <section className='details-section'>
-                <div className='details-container'>
-                    <div className='container'>
+                <div className='details-wrapper'>
+                    <div className='details-container'>
                         <div className='vertical'>
                             <h4 className='product-title'>
                                 {product.title} 
@@ -54,13 +54,12 @@ export const ProductDescription = () => {
                         </div>
                     </div>
                 </div>
-                <a href='#test'>
+                <a href='#more'>
                     <div className='scroll-down'></div>
                 </a>
                 <img src={product.image} alt={product.title }/>
             </section>
-            <section id='test'>helllo testing testing</section>
         </section>
     )
 }
-export default ProductDescription
+export default ProductDetails

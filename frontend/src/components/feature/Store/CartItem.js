@@ -7,7 +7,6 @@ export const CartItem = ({ product }) => {
 
     return (
         <li>
-            <img src={product.image} alt={product.title} />
             <div>
                 <p>x{product.quantity}</p>
                 <p>{product.price * product.quantity} kr</p>
